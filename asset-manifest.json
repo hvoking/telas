@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/telas/static/css/main.b0d00962.css",
-    "main.js": "/telas/static/js/main.24f7ecc3.js",
-    "static/js/879.cf8f53b6.chunk.js": "/telas/static/js/879.cf8f53b6.chunk.js",
+    "main.js": "/telas/static/js/main.1f3f80b0.js",
+    "static/js/879.45d7b0c5.chunk.js": "/telas/static/js/879.45d7b0c5.chunk.js",
     "index.html": "/telas/index.html",
     "main.b0d00962.css.map": "/telas/static/css/main.b0d00962.css.map",
-    "main.24f7ecc3.js.map": "/telas/static/js/main.24f7ecc3.js.map",
-    "879.cf8f53b6.chunk.js.map": "/telas/static/js/879.cf8f53b6.chunk.js.map"
+    "main.1f3f80b0.js.map": "/telas/static/js/main.1f3f80b0.js.map",
+    "879.45d7b0c5.chunk.js.map": "/telas/static/js/879.45d7b0c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0d00962.css",
-    "static/js/main.24f7ecc3.js"
+    "static/js/main.1f3f80b0.js"
   ]
 }
