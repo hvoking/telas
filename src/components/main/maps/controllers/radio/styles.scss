@@ -1,0 +1,33 @@
+$background-color: rgba(34, 34, 43, 1);
+
+.selector-wrapper {
+	position: absolute;
+	display: grid;
+	grid-gap: 15px;
+	top: calc(100%/2 - 100%/3);
+	z-index: 5;
+	background-color: $background-color;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 25px;
+	cursor: grab;
+}
+.selector-wrapper {
+  input {
+    cursor: pointer;
+  }
+}
+.selector-wrapper:before {
+  content: '';
+  border-bottom: 25px solid rgba(33, 33, 43, 1);
+  border-right: 25px solid transparent;
+  position: absolute;
+  top: -25px;
+}
+.selector-wrapper:after {
+  content: '';
+  border-top: 25px solid rgba(33, 33, 43, 1);
+  border-right: 25px solid transparent;
+  position: absolute;
+  top: 100%;
+}

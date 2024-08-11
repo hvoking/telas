@@ -1,0 +1,37 @@
+$background-color: rgba(33, 33, 43, 1);
+
+.empresas {
+	color: rgba(255, 255, 255, 1);
+	scroll-snap-align: start;
+	display: grid;
+	grid-template-rows: 30px 1fr 1fr;
+	grid-gap: 10px;
+	height: 100%;
+}
+.empresas-graphics-wrapper {
+	background-color: $background-color;
+	padding: 27px;
+	border-radius: 10px;
+}
+.empresas-circles {
+	width: 240px;
+	height: 240px;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-gap: 7px;
+	margin: auto;
+}
+.empresas-legend {
+	background-color: $background-color;
+	border-radius: 10px;
+	display: grid;
+	align-items: center;
+	padding: 20px;
+	padding-left: 30px;
+}
+.empresas-item {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: min-content min-content auto min-content;
+	align-items: center;
+}

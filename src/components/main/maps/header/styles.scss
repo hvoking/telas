@@ -1,0 +1,31 @@
+$background-color: rgba(23, 23, 32, 1);
+
+.map-header-wrapper {
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+}
+.map-header {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  grid-gap: 5px;
+  background-color: $background-color;
+  height: 30px;
+}
+.map-header:before {
+  content: '';
+  border-top: 30px solid $background-color;
+  border-left: 50px solid transparent;
+  position: absolute;
+  left: 30px;
+}
+.map-header:after {
+  content: '';
+  border-top: 30px solid $background-color;
+  border-right: 50px solid transparent;
+  position: absolute;
+  left: calc(100% - 80px);
+}

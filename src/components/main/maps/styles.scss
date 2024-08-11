@@ -1,0 +1,16 @@
+$item-background: rgba(33, 33, 43, 1);
+
+.maps {
+  position: relative;
+  padding: 5px;
+}
+.boxdraw {
+  background: rgba(56, 135, 190, 0.1);
+  border: 2px solid #3887be;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}

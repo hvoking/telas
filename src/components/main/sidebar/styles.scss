@@ -1,0 +1,7 @@
+.sidebar-pages {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	scroll-snap-type: y mandatory;
+	padding-right: 5px;
+	color: rgba(255, 255, 255, 1);
+}

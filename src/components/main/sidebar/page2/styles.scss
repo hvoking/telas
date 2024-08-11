@@ -1,0 +1,15 @@
+$background-color: rgba(33, 33, 43, 1);
+
+.page2-wrapper {
+	display: grid;
+	height: 100%;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 10px;
+	scroll-snap-align: start;
+}
+.tipologia-prices {
+	background-color: $background-color;
+	display: grid;
+	grid-template-rows: min-content min-content auto;
+	border-radius: 20px;
+}

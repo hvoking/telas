@@ -1,0 +1,10 @@
+.mapboxgl-ctrl-group {
+  background-color: rgba(33, 33, 34, 1) !important;
+  margin-right: 1px !important;
+}
+.mapboxgl-ctrl-icon {
+  filter: invert(100%);
+}
+.mapboxgl-ctrl-compass {
+  filter: invert(70%) brightness(130%);
+}

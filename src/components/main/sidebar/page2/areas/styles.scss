@@ -1,0 +1,30 @@
+.areas-wrapper {
+	background-color: rgba(33, 33, 43, 1);
+	border-radius: 20px;
+	display: grid;
+	grid-template-rows: 30px auto;
+	color: rgba(255, 255, 255, 1);
+	overflow: hidden;
+}
+.areas-legend-wrapper {
+	white-space: nowrap;
+	display: grid;
+	grid-template-columns: min-content auto min-content min-content;
+	grid-gap: 10px;
+	padding-right: 20px;
+}
+.areas-input-wrapper {
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 5px;
+	font-size: 0.8em;
+	align-self: center;
+}
+.areas-input {
+	width: 30px;
+	background-color: rgba(23, 23, 32, 1);
+	border: 2px solid rgba(126, 126, 132, 1);
+	color: rgba(255, 255, 255, 1);
+	border-radius: 5px;
+	text-align: center;
+}

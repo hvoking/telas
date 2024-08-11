@@ -1,0 +1,18 @@
+.yu-header{
+  background-color: rgba(0, 0, 0, 1);
+  display: grid;
+  grid-template-columns: min-content auto auto min-content min-content;
+  grid-gap: 10px;
+  align-items: center;
+}
+.small-yu-header {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .small-yu-header {
+    display: block;
+  }
+  .normal-yu-header {
+    display: none;
+  }
+}
