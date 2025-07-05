@@ -21,6 +21,11 @@ body {
   grid-template-areas:
     "s m";
 }
+.wrapper {
+  height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
+  display: grid;
+}
 .sidebar {
   grid-area: s;
 }

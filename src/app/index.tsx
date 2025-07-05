@@ -1,20 +1,27 @@
-// React imports
-import { useRef } from 'react';
-
 // App imports
-import { Wrapper } from './wrapper';
 import { Sidebar } from './sidebar';
-import { Maps } from './maps';
+import { Layout } from './layout';
 import './styles.scss';
 
+// Context imports
+import { ContextProvider } from 'context';
+
 export const App = () => {
-	const inputRef = useRef<any>(null);
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+	window.addEventListener('resize', () => {
+	  let vh = window.innerHeight * 0.01;
+	  document.documentElement.style.setProperty('--vh', `${vh}px`);
+	});
 	
 	return (
-		<Wrapper>
-			<Sidebar/>
-			<Maps/>
-		</Wrapper>
+		<ContextProvider>
+			<div className="App">
+				<Sidebar/>
+				<Layout/>
+			</div>
+		</ContextProvider>
 	)
 }
 

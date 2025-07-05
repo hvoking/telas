@@ -1,11 +1,16 @@
 $font-color: rgba(255, 255, 255, 1);
 $background-color: rgba(33, 33, 43, 1);
 
-.auto-complete {
-  display: grid;
-  grid-template-columns: min-content auto min-content;
-  position: relative;
-  justify-self: end;
+.search-wrapper {
+  position: absolute;
+  right: 50%;
+  top: 40px;
+  transform: translateX(50%);
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  border-radius: 10px;
+  z-index: 3;
 }
 .maps-input {
   overflow-x: hidden;

@@ -6,6 +6,7 @@ import { MapControllers } from './controllers';
 import { MapHeader } from './header';
 import { BasemapsSelectors } from './basemaps';
 import { RadioSelector } from './controllers/radio';
+import { Search } from './search';
 import './styles.scss';
 
 // Layers imports
@@ -30,7 +31,7 @@ const DeckGLOverlay = (props: DeckProps) => {
   return null;
 }
 
-export const Maps = () => {
+export const Layout = () => {
 	const { mapRef, viewport, setMarker, setMarkerCoordinates, mapStyle } = useGeo();
 	const { setInitialMarker } = useIsoPolygonApi();
 
@@ -57,6 +58,7 @@ export const Maps = () => {
 	return (
 		<div className="maps">
 			<MapHeader/>
+			<Search/>
 			<Map
 				ref={mapRef}
 				initialViewState={viewport}
@@ -79,4 +81,4 @@ export const Maps = () => {
 	)
 }
 
-Maps.displayName="Maps";
+Layout.displayName="Layout";

@@ -131,41 +131,37 @@ export const Search = ({ activeSearch, setActiveSearch }: any) => {
 	}
 
 	return (
-		<div className="auto-complete">
+		<div className="search-wrapper">
 			<img 
 				className="header-search-icon"
 				src={process.env.PUBLIC_URL + "/static/icons/search.svg"}
 				alt="search-icon"
 				onClick={() => setActiveSearch((prev: boolean) => !prev)}
 			/>
-			{activeSearch && 
-				<>
-					<input 
-						className="maps-input"
-						type="text" 
-						placeholder="pesquise um lugar..."
-						value={searchText}
-						onChange={handleChange}
-						onKeyDown={handleKeyDown}
-						spellCheck={false}
-						ref={inputRef}
-					/>
-					<div className="cancel-cross-wrapper">
-						<img
-							className="cancel-cross"
-							src={process.env.PUBLIC_URL + "/static/icons/search.svg"}
-							alt="search-icon"
-							onClick={cleanSuggestions}
-						/>
-					</div>
-					{suggestionsActive && suggestions &&
-						<Suggestions 
-							suggestions={suggestions} 
-							suggestionIndex={suggestionIndex} 
-							handleClick={handleClick}
-						/>
-					}
-				</>
+			<input 
+				className="maps-input"
+				type="text" 
+				placeholder="pesquise um lugar..."
+				value={searchText}
+				onChange={handleChange}
+				onKeyDown={handleKeyDown}
+				spellCheck={false}
+				ref={inputRef}
+			/>
+			<div className="cancel-cross-wrapper">
+				<img
+					className="cancel-cross"
+					src={process.env.PUBLIC_URL + "/static/icons/search.svg"}
+					alt="search-icon"
+					onClick={cleanSuggestions}
+				/>
+			</div>
+			{suggestionsActive && suggestions &&
+				<Suggestions 
+					suggestions={suggestions} 
+					suggestionIndex={suggestionIndex} 
+					handleClick={handleClick}
+				/>
 			}
 		</div>
 	)
