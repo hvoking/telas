@@ -2,10 +2,10 @@
 import './styles.scss';
 
 // Context imports
-import { useBasemaps } from 'context/maps/basemaps';
+import { useGeo } from 'context/geo';
 
 export const BasemapsSelectors = () => {
-	const { currentBasemap, setCurrentBasemap } = useBasemaps();
+	const { currentBasemap, setCurrentBasemap } = useGeo();
 
 	return (
 		<div className="basemaps-parent-wrapper">

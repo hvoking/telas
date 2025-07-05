@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useGeo } from '../../../../context/filters/geo';
+import { useGeo } from 'context/geo';
 
 const MapboxSearchApiContext: React.Context<any> = createContext(null)
 
@@ -16,11 +16,13 @@ export const MapboxSearchApiProvider = ({children}: any) => {
 	const [ mapboxSearchData, setMapboxSearchData ] = useState(null);
 	const [ searchText, setSearchText ] = useState('');
 	const [ finalSearchText, setFinalSearchText ] = useState('');
-	const { markerCoordinates, cityName } = useGeo();
+	const { markerCoordinates } = useGeo();
+
+	const { longitude, latitude } = markerCoordinates;
 
 	useEffect(() => {
 	  const fetchData = async () => {
-	  	const temporarySearchText = searchText.replace(" ", "__")
+	  	const temporarySearchText = searchText.replace(" ", "__");
 	    const tempUrl = `
 	    	https://api.mapbox.com/geocoding/v5/
 	    	mapbox.places/
@@ -28,7 +30,7 @@ export const MapboxSearchApiProvider = ({children}: any) => {
 	    	?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}
 	    	&country=BR
 	    	&language=pt
-	    	&proximity=${markerCoordinates.longitude},${markerCoordinates.latitude}
+	    	&proximity=${longitude},${latitude}
 	    `;
 	    const url = tempUrl.replace(/\s/g, '').replace("__", " ");
 	    const res = await fetch(url);

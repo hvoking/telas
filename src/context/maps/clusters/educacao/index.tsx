@@ -1,9 +1,6 @@
 // React imports
 import { useContext, createContext } from 'react';
 
-// Third party imports
-import type { LayerProps } from 'react-map-gl';
-
 const EducacaoClustersContext: React.Context<any> = createContext(null);
 
 export const useEducacaoClusters = () => {
@@ -13,7 +10,7 @@ export const useEducacaoClusters = () => {
 }
 
 export const EducacaoClustersProvider = ({children}: any) => {
-  const educacaoClusterLayer: LayerProps = {
+  const educacaoClusterLayer: any = {
     id: 'educacao-clusters',
     type: 'circle',
     source: 'educacao-clusters',
@@ -34,7 +31,7 @@ export const EducacaoClustersProvider = ({children}: any) => {
     }
   };
 
-  const educacaoClusterCountLayer: LayerProps = {
+  const educacaoClusterCountLayer: any = {
     id: 'educacao-cluster-count',
     type: 'symbol',
     source: 'educacao-clusters',

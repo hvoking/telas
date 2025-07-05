@@ -1,9 +1,6 @@
 // React imports
 import { useContext, createContext } from 'react';
 
-// Third party imports
-import type { LayerProps } from 'react-map-gl';
-
 const VarejoClustersContext: React.Context<any> = createContext(null);
 
 export const useVarejoClusters = () => {
@@ -13,7 +10,7 @@ export const useVarejoClusters = () => {
 }
 
 export const VarejoClustersProvider = ({children}: any) => {
-  const varejoClusterLayer: LayerProps = {
+  const varejoClusterLayer: any = {
     id: 'varejo-clusters',
     type: 'circle',
     source: 'varejo-clusters',
@@ -34,7 +31,7 @@ export const VarejoClustersProvider = ({children}: any) => {
     }
   };
 
-  const varejoClusterCountLayer: LayerProps = {
+  const varejoClusterCountLayer: any = {
     id: 'varejo-cluster-count',
     type: 'symbol',
     source: 'varejo-clusters',
@@ -45,7 +42,7 @@ export const VarejoClustersProvider = ({children}: any) => {
     }
   };
 
-  // const unclusteredPointLayer: LayerProps = {
+  // const unclusteredPointLayer: any = {
   //   id: 'unclustered-point',
   //   type: 'circle',
   //   source: 'cnpj-clusters',

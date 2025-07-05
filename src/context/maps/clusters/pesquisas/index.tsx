@@ -1,9 +1,6 @@
 // React imports
 import { useContext, createContext } from 'react';
 
-// Third party imports
-import type { LayerProps } from 'react-map-gl';
-
 const PesquisasClustersContext: React.Context<any> = createContext(null);
 
 export const usePesquisasClusters = () => {
@@ -13,7 +10,7 @@ export const usePesquisasClusters = () => {
 }
 
 export const PesquisasClustersProvider = ({children}: any) => {
-  const pesquisasClusterLayer: LayerProps = {
+  const pesquisasClusterLayer: any = {
     id: 'pesquisa-clusters',
     type: 'circle',
     source: 'pesquisa-clusters',
@@ -34,7 +31,7 @@ export const PesquisasClustersProvider = ({children}: any) => {
     }
   };
 
-  const pesquisasClusterCountLayer: LayerProps = {
+  const pesquisasClusterCountLayer: any = {
     id: 'pesquisa-cluster-count',
     type: 'symbol',
     source: 'pesquisa-clusters',

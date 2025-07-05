@@ -3,14 +3,12 @@ import { PropertyTypeProvider } from './property';
 import { DatesProvider } from './dates';
 import { PricesProvider } from './prices';
 import { AreasProvider } from './areas';
-import { GeoProvider } from './geo';
 import { ParcelDimensionsProvider } from './parcel';
 import { CircleDimensionsProvider } from './circle';
 
 export const FiltersProvider = ({children}: any) => {
   return (
     <PropertyTypeProvider>
-    <GeoProvider>
     <DatesProvider>
     <PricesProvider>
     <AreasProvider>
@@ -22,7 +20,6 @@ export const FiltersProvider = ({children}: any) => {
     </AreasProvider>
     </PricesProvider>
     </DatesProvider>
-    </GeoProvider>
     </PropertyTypeProvider>
   )
 }

@@ -15,13 +15,11 @@ import { usePointsLayer } from 'context/maps/layers/grid/prices';
 import { useParcelsLayer } from 'context/maps/layers/parcels';
 
 // Context imports
-import { useMapboxProperties } from 'context/maps/mapbox';
-import { useBasemaps } from 'context/maps/basemaps';
-import { useGeo } from 'context/filters/geo';
+import { useGeo } from 'context/geo';
 import { useIsoPolygonApi } from 'context/api/isoPolygon'
 
 // Third-party imports
-import { Map, useControl } from 'react-map-gl';
+import { Map, useControl } from 'react-map-gl/mapbox';
 import { DeckProps } from '@deck.gl/core/typed';
 import { MapboxOverlay } from '@deck.gl/mapbox/typed';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -33,9 +31,7 @@ const DeckGLOverlay = (props: DeckProps) => {
 }
 
 export const Maps = () => {
-	const { mapRef, viewport } = useMapboxProperties();
-	const { currentBasemap } = useBasemaps();
-	const { setMarker, setMarkerCoordinates } = useGeo();
+	const { mapRef, viewport, setMarker, setMarkerCoordinates, mapStyle } = useGeo();
 	const { setInitialMarker } = useIsoPolygonApi();
 
 	// Layers
@@ -52,11 +48,10 @@ export const Maps = () => {
 	];
 
 	const onDblClick = useCallback((event: any) => {
-		const lng = event.lngLat.lng;
-		const lat = event.lngLat.lat;
+		const { lng: longitude, lat: latitude } = event.lngLat;
 		setInitialMarker(false);
-		setMarkerCoordinates({ longitude: lng, latitude: lat });
-		setMarker({ longitude: lng, latitude: lat });
+		setMarkerCoordinates({ longitude, latitude });
+		setMarker({ longitude, latitude });
 	}, []); 
 
 	return (
@@ -67,7 +62,7 @@ export const Maps = () => {
 				initialViewState={viewport}
 				// interactiveLayerIds={[clusterLayer.id]}
 				mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} 
-				mapStyle={currentBasemap}
+				mapStyle={mapStyle}
 				onDblClick={onDblClick}
 				doubleClickZoom={false}
 				preserveDrawingBuffer={true}

@@ -9,14 +9,12 @@ import './styles.scss';
 import { cities, data } from 'utils/cities';
 
 // Context imports
-import { useMapboxProperties } from 'context/maps/mapbox';
-import { useMapboxSearchApi } from 'context/maps/mapbox/search';
+import { useMapboxSearchApi } from 'context/api/mapbox/search';
 import { useIsoPolygonApi } from 'context/api/isoPolygon';
-import { useGeo } from 'context/filters/geo';
+import { useGeo } from 'context/geo';
 
 export const Search = ({ activeSearch, setActiveSearch }: any) => {
-	const { Locations, viewport, setViewport } = useMapboxProperties();
-	const { setCityName, setCityId } = useGeo();
+	const { Locations, viewport, setViewport, setCityName, setCityId } = useGeo();
 	const { setInitialMarker } = useIsoPolygonApi();
 
 	const { mapboxSearchData, searchText, setSearchText, setFinalSearchText } = useMapboxSearchApi();

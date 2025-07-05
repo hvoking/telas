@@ -5,9 +5,11 @@ import { MapsProvider } from './maps';
 import { ApiProvider } from './api';
 import { ScrollProvider } from './scroll';
 import { SizesProvider } from './sizes';
+import { GeoProvider } from './geo';
 
 export const ContextProvider = ({children}: any) => {
   return (
+    <GeoProvider>
     <ScrollProvider>
     <FiltersProvider>
     <ApiProvider>
@@ -21,6 +23,7 @@ export const ContextProvider = ({children}: any) => {
     </ApiProvider>
     </FiltersProvider>
     </ScrollProvider>
+    </GeoProvider>
   )
 }
 

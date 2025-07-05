@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useGeo } from '../geo';
+import { useGeo } from 'context/geo';
 
 const CircleDimensionsContext: React.Context<any> = createContext(null)
 

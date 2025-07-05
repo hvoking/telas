@@ -1,12 +1,12 @@
 // React imports
-import { useEffect, useContext, createContext } from 'react';
+import { useContext, createContext } from 'react';
 
 // Context imports
-import { useParcelsApi } from '../../../api/parcels';
-import { useGeo } from '../../../filters/geo';
-import { useAreas } from '../../../filters/areas';
-import { useScroll } from '../../../scroll';
-import { useParcelDimensions } from '../../../filters/parcel';
+import { useParcelsApi } from 'context/api/parcels';
+import { useGeo } from 'context/geo';
+import { useAreas } from 'context/filters/areas';
+import { useScroll } from 'context/scroll';
+import { useParcelDimensions } from 'context/filters/parcel';
 
 // Third party imports
 // @ts-ignore

@@ -1,9 +1,6 @@
 // React imports
 import { useContext, createContext } from 'react';
 
-// Third party imports
-import type { LayerProps } from 'react-map-gl';
-
 const ServicosClustersContext: React.Context<any> = createContext(null);
 
 export const useServicosClusters = () => {
@@ -13,7 +10,7 @@ export const useServicosClusters = () => {
 }
 
 export const ServicosClustersProvider = ({children}: any) => {
-  const servicosClusterLayer: LayerProps = {
+  const servicosClusterLayer: any = {
     id: 'servicos-clusters',
     type: 'circle',
     source: 'servicos-clusters',
@@ -34,7 +31,7 @@ export const ServicosClustersProvider = ({children}: any) => {
     }
   };
 
-  const servicosClusterCountLayer: LayerProps = {
+  const servicosClusterCountLayer: any = {
     id: 'servicos-cluster-count',
     type: 'symbol',
     source: 'servicos-clusters',

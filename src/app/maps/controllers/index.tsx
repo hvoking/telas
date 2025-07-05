@@ -5,14 +5,14 @@ import { useState, useEffect } from 'react';
 import './styles.scss';
 
 // Context imports
-import { useMapboxProperties } from 'context/maps/mapbox';
+import { useGeo } from 'context/geo';
 import { useIsoPolygonApi } from 'context/api/isoPolygon';
 
 // Third party imports
-import { NavigationControl, FullscreenControl, GeolocateControl } from 'react-map-gl';
+import { NavigationControl, FullscreenControl, GeolocateControl } from 'react-map-gl/mapbox';
 
 export const MapControllers = () => {
-	const { viewport, setViewport } = useMapboxProperties();
+	const { viewport, setViewport } = useGeo();
 	const { setInitialMarker } = useIsoPolygonApi();
 
 	const [ placeCoordinates, setPlaceCoordinates ] = useState<any>(null);

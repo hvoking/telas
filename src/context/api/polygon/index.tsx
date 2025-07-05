@@ -2,8 +2,8 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useGeo } from '../../filters/geo';
-import { useIsoPolygonApi } from '../isoPolygon';
+import { useGeo } from 'context/geo';
+import { useIsoPolygonApi } from 'context/api/isoPolygon';
 
 const PolygonApiContext: React.Context<any> = createContext(null)
 

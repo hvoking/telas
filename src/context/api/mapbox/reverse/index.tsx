@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // App imports
-import { useGeo } from '../../../filters/geo';
+import { useGeo } from 'context/geo';
 
 const ReverseGeocodingApiContext: React.Context<any> = createContext(null)
 

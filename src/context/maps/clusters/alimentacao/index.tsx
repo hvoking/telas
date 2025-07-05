@@ -1,9 +1,6 @@
 // React imports
 import { useContext, createContext } from 'react';
 
-// Third party imports
-import type { LayerProps } from 'react-map-gl';
-
 const AlimentacaoClustersContext: React.Context<any> = createContext(null);
 
 export const useAlimentacaoClusters = () => {
@@ -13,7 +10,7 @@ export const useAlimentacaoClusters = () => {
 }
 
 export const AlimentacaoClustersProvider = ({children}: any) => {
-  const alimentacaoClusterLayer: LayerProps = {
+  const alimentacaoClusterLayer: any = {
     id: 'alimentacao-clusters',
     type: 'circle',
     source: 'alimentacao-clusters',
@@ -34,7 +31,7 @@ export const AlimentacaoClustersProvider = ({children}: any) => {
     }
   };
 
-  const alimentacaoClusterCountLayer: LayerProps = {
+  const alimentacaoClusterCountLayer: any = {
     id: 'alimentacao-cluster-count',
     type: 'symbol',
     source: 'alimentacao-clusters',

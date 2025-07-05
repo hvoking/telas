@@ -27,7 +27,7 @@
     "mapbox-gl-draw": "^0.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-map-gl": "^7.0.19",
+    "react-map-gl": "^8.0.4",
     "react-pdf": "^6.2.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
