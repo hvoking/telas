@@ -2,9 +2,9 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useIsoPolygonApi } from '../../isoPolygon';
-import { usePropertyType } from '../../../filters/property';
-import { useAreas } from '../../../filters/areas';
+import { useIsoPolygonApi } from 'context/api/isoPolygon';
+import { usePropertyType } from 'context/filters/property';
+import { useAreas } from 'context/filters/areas';
 
 const DsvApiContext: React.Context<any> = createContext(null)
 
@@ -32,9 +32,18 @@ export const DsvApiProvider = ({children}: any) => {
 	    	&area_max=${areaMax}
 	    `
 	  	const url = tempUrl.replace(/\s/g, '');
-	    const res = await fetch(url);
-	    const receivedData = await res.json();
-	    setDsvData(receivedData);
+	  	try {
+		    const res = await fetch(url);
+		    if (!res.ok) {
+		    	throw new Error(`HTTP error! status: ${res.status}`);
+		    }
+		    const receivedData = await res.json();
+		    setDsvData(receivedData);
+	    }
+        catch (error) {
+    		console.error("Error fetching address:", error);
+    		return null;
+    	}
 	  }
 	  isoPolygonData && fetchData();
 	}, [ 

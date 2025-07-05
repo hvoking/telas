@@ -1,42 +1,22 @@
-$font-color: rgba(255, 255, 255, 1);
-$background-color: rgba(33, 33, 43, 1);
-
 .search-wrapper {
   position: absolute;
   right: 50%;
-  top: 40px;
+  top: 50px;
   transform: translateX(50%);
   padding: 5px;
   display: flex;
   gap: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);; 
+  background-color: rgba(234, 234, 234, 1);
   border-radius: 10px;
   z-index: 3;
 }
-.maps-input {
-  overflow-x: hidden;
-  color: $font-color;
-  background-color: $background-color;
-  border: none;
-  height: 30px;
-  font-size: 1em;
-  text-indent: 10px;
-}
-.maps-input:focus {
-  outline: none;
-}
-.cancel-cross-wrapper {
-  background-color: $background-color;
-  width: 30px;
-  display: grid;
-}
-.cancel-cross {
-  width: 15px;
-  cursor: pointer;
-  align-self: center;
-  justify-self: center;
-  background-color: $background-color;
-}
-.header-search-icon {
-  cursor: pointer;
-  height: 32px;
+// mobile-style
+@media screen and (max-width: 768px) {
+  .search-wrapper {
+    top: 65px;
+    right: 15px;
+    transform: none;
+    width: calc(100% - 40px);
+  }
 }

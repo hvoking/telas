@@ -32,9 +32,18 @@ export const RoomsApiProvider = ({children}: any) => {
 	    	&final_date=${finalDate}
 	    `
 	  	const url = tempUrl.replace(/\s/g, '');
-	    const res = await fetch(url);
-	    const receivedData = await res.json();
-	    setRoomsData(receivedData);
+	  	try {
+		    const res = await fetch(url);
+		    if (!res.ok) {
+		    	throw new Error(`HTTP error! status: ${res.status}`);
+		    }
+		    const receivedData = await res.json();
+		    setRoomsData(receivedData);
+	    }
+	    catch (error) {
+			console.error("Error fetching address:", error);
+			return null;
+		}
 	  }
 	  isoPolygonData && fetchData();
 	}, [ 

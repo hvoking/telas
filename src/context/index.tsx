@@ -6,6 +6,7 @@ import { ApiProvider } from './api';
 import { ScrollProvider } from './scroll';
 import { SizesProvider } from './sizes';
 import { GeoProvider } from './geo';
+import { SearchProvider } from './search';
 
 export const ContextProvider = ({children}: any) => {
   return (
@@ -13,6 +14,7 @@ export const ContextProvider = ({children}: any) => {
     <ScrollProvider>
     <FiltersProvider>
     <ApiProvider>
+    <SearchProvider>
     <SizesProvider>
     <PricesProvider>
     <MapsProvider>
@@ -20,6 +22,7 @@ export const ContextProvider = ({children}: any) => {
     </MapsProvider>
     </PricesProvider>
     </SizesProvider>
+    </SearchProvider>
     </ApiProvider>
     </FiltersProvider>
     </ScrollProvider>

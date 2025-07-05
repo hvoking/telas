@@ -21,19 +21,28 @@ export const PolygonApiProvider = ({children}: any) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const res = await fetch(`${process.env.REACT_APP_API_URL}/polygon_api`, {
-				method: "POST",
-				headers: {'Content-Type': 'application/json'},
-				body: JSON.stringify({ 
-					"polygon": JSON.stringify(isoPolygonData.features[0].geometry),
-					"longitude": JSON.stringify(markerCoordinates.longitude),
-					"latitude": JSON.stringify(markerCoordinates.latitude),
-					"schema": "limites",
-					"table": "municipios_br",
-				}),
-			});
-			const receivedData = await res.json();
-			setPolygonData(receivedData[0]);
+			try {
+				const res = await fetch(`${process.env.REACT_APP_API_URL}/polygon_api`, {
+					method: "POST",
+					headers: {'Content-Type': 'application/json'},
+					body: JSON.stringify({ 
+						"polygon": JSON.stringify(isoPolygonData.features[0].geometry),
+						"longitude": JSON.stringify(markerCoordinates.longitude),
+						"latitude": JSON.stringify(markerCoordinates.latitude),
+						"schema": "limites",
+						"table": "municipios_br",
+					}),
+				});
+				if (!res.ok) {
+					throw new Error(`HTTP error! status: ${res.status}`);
+				}
+				const receivedData = await res.json();
+				setPolygonData(receivedData[0]);
+			}
+			catch (error) {
+	    		console.error("Error fetching address:", error);
+	    		return null;
+	    	}
 		}
 		isoPolygonData && fetchData();
 	}, [ isoPolygonData ]);

@@ -1,7 +1,14 @@
 // App imports
 import './styles.scss';
 
-export const Suggestions = ({ suggestions, suggestionIndex, handleClick }: any) => {
+// Context imports
+import { useSearch } from 'context/search';
+
+export const Suggestions = () => {
+	const { handleClick, suggestionsActive, suggestions, suggestionIndex } = useSearch();
+
+	if (!suggestionsActive || !suggestions) return <></>;
+
 	return (
 		<ul className="search-suggestions">
 			{
@@ -11,14 +18,21 @@ export const Suggestions = ({ suggestions, suggestionIndex, handleClick }: any) 
 							key={index}
 							onClick={handleClick}
 							style={{
+								borderRadius: "5px",
 								backgroundColor: index === suggestionIndex ? 
-								"rgba(126, 126, 132, 1)" : 
-								index % 2 === 0 ? 
-								"rgba(126, 126, 132, 0.8)" : 
-								"rgba(126, 126, 132, 0.6)"
+								"rgba(223, 223, 223, 1)" : 
+								"rgba(255, 255, 255, 1)"
 							}}
 						>
-							{suggestion}
+							<div className="current-suggestion">
+								<img 
+									src={process.env.PUBLIC_URL + '/static/icons/pin.svg'} 
+									alt="pin" 
+									width="15px" 
+									style={{alignSelf: "center"}}
+								/>
+								<div>{suggestion}</div>
+							</div>
 						</li>
 					)
 				})

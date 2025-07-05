@@ -14,6 +14,7 @@ export const useReverseGeocodingApi = () => {
 
 export const ReverseGeocodingApiProvider = ({children}: any) => {
 	const { parcelId } = useGeo();
+
 	const [ parcelsProperties, setParcelsProperties ] = useState<any>({});
 	const [ geocodingLongitude, setGeocodingLongitude ] = useState<any>(null);
 	const [ geocodingLatitude, setGeocodingLatitude ] = useState<any>(null);
@@ -32,7 +33,8 @@ export const ReverseGeocodingApiProvider = ({children}: any) => {
 	    const res = await fetch(url);
 	    const receivedData = await res.json();
 	    geocodingLongitude && setParcelsProperties({
-	    	...parcelsProperties, [parcelId] : receivedData
+	    	...parcelsProperties, 
+	    	[parcelId] : receivedData
 	    });
 	  }
 	  fetchData();
